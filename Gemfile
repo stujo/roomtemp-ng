@@ -29,6 +29,10 @@ gem 'coffee-rails', '~> 4.0.0'
 #Use Slim Templates
 gem 'slim'
 
+#AngularJS Railsi
+#from http://vaporbase.com/postings/integrating-angular-dot-js-with-rails
+gem 'angularjs-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: roomtemp_ng_dev
+  pool: 5
+  username: roomtemp_ng
+  password: roomtemp_ng
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: roomtemp_ng_test
+  pool: 5
+  username: roomtemp_ng
+  password: roomtemp_ng
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: roomtemp_ng_prod
+  pool: 5
+  username: roomtemp_ng
+  password: roomtemp_ng

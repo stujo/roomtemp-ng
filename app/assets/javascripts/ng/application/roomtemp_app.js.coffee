@@ -1,0 +1,4 @@
+
+roomTempApp = angular.module 'RoomTemp', []
+
+

@@ -11,3 +11,10 @@
 // about supported directives.
 //
 //= require angular
+// Load App First
+//= require_tree ./ng/application
+// Load Controllers/Directives/Filters
+//= require_tree ./ng/home
+
+
+

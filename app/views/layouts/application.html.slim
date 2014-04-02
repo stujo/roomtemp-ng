@@ -1,9 +1,10 @@
 doctype html
-html ng-app="true"
+html ng-app="RoomTemp"
   head
     title RoomTemp {{"(with angular)"}}
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
+
     = csrf_meta_tags
   body
     = yield

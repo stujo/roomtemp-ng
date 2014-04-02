@@ -1,3 +1,6 @@
 div ng-controller="HomeCtrl"
   h1.ng-cloak
     |{{title}}
+  ul
+    li ng-repeat="option in options"
+      =link_to '{{option.label}}', '{{option.href}}'

@@ -4,3 +4,6 @@
 
 angular.module('RoomTemp').controller 'HomeCtrl',  ($scope)->
    $scope.title = "RoomTemp"
+   $scope.options = [
+     { label: 'test', href: '/'}
+  ]

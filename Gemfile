@@ -58,5 +58,7 @@ group :development, :test do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'better_errors'
+  gem 'quiet_assets'
 end
 

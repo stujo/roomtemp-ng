@@ -28,6 +28,9 @@ GEM
     angularjs-rails (1.2.15)
     arel (4.0.2)
     atomic (1.1.16)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.1.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -93,6 +96,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -172,12 +177,14 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  better_errors
   coffee-rails (~> 4.0.0)
   guard-bundler
   guard-livereload
   guard-rails
   guard-rspec
   pg
+  quiet_assets
   rails (= 4.0.4)
   rspec-rails
   sass-rails (~> 4.0.2)

@@ -6,11 +6,11 @@ html ng-app="RoomTemp" ng-controller="LayoutCtrl"
     = javascript_include_tag "application"
 
     = csrf_meta_tags
-  body
+  body class="{{User.loggedIn() ? 'roomtemp_logged_in' : 'roomtemp_logged_out'}}"
     .header
       ul
-        li ng-show="User.loggedIn()" =link_to 'Log Out', '/logout'
-        li ng-hide="User.loggedIn()" =link_to 'Log In', '/login'
+        li class="roomtemp_if_logged_in" =link_to 'Log Out', '/logout'
+        li class="roomtemp_if_logged_out" =link_to 'Log In', '/login'
     H1
       |{{ Page.title() }}
     = yield

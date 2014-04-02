@@ -1,0 +1,19 @@
+body.roomtemp_logged_in li.roomtemp_if_logged_in
+{
+  display: block;
+}
+
+body.roomtemp_logged_out li.roomtemp_if_logged_out
+{
+  display: block;
+}
+
+body.roomtemp_logged_out li.roomtemp_if_logged_in
+{
+  display: none;
+}
+
+body.roomtemp_logged_in li.roomtemp_if_logged_out
+{
+  display: none;
+}

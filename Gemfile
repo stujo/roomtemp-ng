@@ -13,6 +13,10 @@ gem 'sass-rails', '~> 4.0.2'
 
 gem 'bootstrap-sass', '~> 3.1'
 
+#https://github.com/cconstantin/angular-ui-bootstrap-rails
+gem 'angular-ui-bootstrap-rails'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

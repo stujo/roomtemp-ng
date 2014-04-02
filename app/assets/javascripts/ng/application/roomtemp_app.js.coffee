@@ -1,4 +1,5 @@
-roomTempApp = angular.module 'RoomTemp', []
+roomTempApp = angular.module 'RoomTemp', ["ui.bootstrap"]
+
 
 roomTempApp.factory('Page', ()->
   title = 'Welcome'

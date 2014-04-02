@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require angular
+// https://github.com/cconstantin/angular-ui-bootstrap-rails
+//= require angular-ui-bootstrap-tpls
 // Load App First
 //= require_tree ./ng/application
 // Load Controllers/Directives/Filters

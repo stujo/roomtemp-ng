@@ -5,7 +5,12 @@ div ng-controller="HomeCtrl"
     li ng-repeat="option in options"
       =link_to '{{option.label}}', '{{option.href}}'
 
-  .btn-group
-    button.btn.btn-default ng-click="asBob()" Bob
-    button.btn.btn-default ng-click="asMary()" Mary
-    button.btn.btn-default ng-click="asUnknown()" Unknown
+  .panel
+    .btn-group
+      button.btn.btn-default ng-click="asBob()" Bob
+      button.btn.btn-default ng-click="asMary()" Mary
+      button.btn.btn-default ng-click="asUnknown()" Unknown
+
+  .panel
+    .btn-group
+      button.btn.btn-default ng-click="Alert.addAlert(alertType,alertMessage)" Add Alert

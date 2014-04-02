@@ -68,6 +68,13 @@ html ng-app="RoomTemp" ng-controller="LayoutCtrl" lang="en"
             /  li.roomtemp_if_logged_out
             /    a href="/register" Register
 
+      .roomtemp_alerts
+        alert [ng-repeat="alert in Alert.alerts()"
+            type="alert.type"
+            close="Alert.closeAlert($index)"
+            ]
+          |{{alert.msg}}
+
       H1
         |{{ Page.title() }}
       = yield

@@ -32,6 +32,7 @@ roomTempApp.factory('User', ()->
   {
     asUser: (id) ->
       user = selectUserById(id)
+
     user: ()->
       if loggedIn
         user
@@ -42,7 +43,24 @@ roomTempApp.factory('User', ()->
   }
 )
 
-roomTempApp.controller 'LayoutCtrl',  ($scope, Page, User)->
+
+roomTempApp.factory('Alert', ()->
+  alerts = [
+    { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+    { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+  ]
+  {
+    addAlert: (message, type = 'warning') ->
+      alerts.push  {type: type, msg: message}
+      alerts.shift() if alerts.length > 3
+    closeAlert: (index) -> alerts.splice(index, 1)
+    alerts: () -> alerts
+  }
+)
+
+roomTempApp.controller 'LayoutCtrl',  ($scope, Page, User, Alert)->
   $scope.Page = Page
   $scope.User = User
+  $scope.Alert = Alert
   true
+

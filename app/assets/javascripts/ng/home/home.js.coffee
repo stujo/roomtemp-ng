@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-angular.module('RoomTemp').controller 'HomeCtrl',  ($scope, Page, User)->
+angular.module('RoomTemp').controller 'HomeCtrl',  ($scope, Page, User, Alert)->
   Page.setTitle(() ->
     if User.loggedIn()
       "Home for #{User.user().name}!"
@@ -13,7 +13,15 @@ angular.module('RoomTemp').controller 'HomeCtrl',  ($scope, Page, User)->
      { label: 'test', href: '/'}
   ]
 
-  $scope.asUnknown = () -> User.asUser(0)
-  $scope.asBob = () -> User.asUser(1)
-  $scope.asMary = () -> User.asUser(2)
+  $scope.asUnknown = () ->
+    u = User.asUser(0)
+    Alert.addAlert('Logged Out') unless u
+
+  $scope.asBob = () ->
+    User.asUser(1)
+    Alert.addAlert('Logged in as ' + User.user().name + "!", "success")
+
+  $scope.asMary = () ->
+    User.asUser(2)
+    Alert.addAlert('Logged in as ' + User.user().name + "!", "success")
 

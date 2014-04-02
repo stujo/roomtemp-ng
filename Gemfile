@@ -53,5 +53,10 @@ end
 #Rspec
 gem "rspec-rails", group: [ :test ]
 
-
+group :development, :test do
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+end
 

@@ -11,6 +11,16 @@ div ng-controller="HomeCtrl"
       button.btn.btn-default ng-click="asMary()" Mary
       button.btn.btn-default ng-click="asUnknown()" Unknown
 
-  .panel
-    .btn-group
-      button.btn.btn-default ng-click="Alert.addAlert(alertType,alertMessage)" Add Alert
+
+      
+  form.form-inline role="form"
+    .form-group
+      input.form-control type="text" id="alertMessage" ng-model="alertToAdd.msg" placeholder="Message"
+    .form-group
+      select.form-control id="alertType" ng-model="alertToAdd.type"
+        option success
+        option error
+        option warning
+        option danger
+
+    button.btn.btn-default ng-click="postNewAlert(alertToAdd)" Add {{alertToAdd.type || 'alert'}} message

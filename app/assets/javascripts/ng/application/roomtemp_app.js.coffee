@@ -1,7 +1,7 @@
 roomTempApp = angular.module 'RoomTemp', ["ui.bootstrap"]
 
 
-roomTempApp.factory('Page', ()->
+roomTempApp.service('Page', ()->
   title = 'Welcome'
   {
     title: ()->
@@ -13,7 +13,7 @@ roomTempApp.factory('Page', ()->
   }
 )
 
-roomTempApp.factory('User', ()->
+roomTempApp.service('User', ()->
   users = [
     {id: 1, name: 'Bob'}
     {id: 2, name: 'Mary'}
@@ -44,15 +44,19 @@ roomTempApp.factory('User', ()->
 )
 
 
-roomTempApp.factory('Alert', ()->
+roomTempApp.service('Alert', ()->
   alerts = [
     { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
     { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
   ]
   {
     addAlert: (message, type = 'warning') ->
-      alerts.push  {type: type, msg: message}
-      alerts.shift() if alerts.length > 3
+      if message
+        alerts.push  {msg: message, type: type}
+        alerts.shift() if alerts.length > 3
+        true
+      else
+        false
     closeAlert: (index) -> alerts.splice(index, 1)
     alerts: () -> alerts
   }

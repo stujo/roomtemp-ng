@@ -25,3 +25,10 @@ angular.module('RoomTemp').controller 'HomeCtrl',  ($scope, Page, User, Alert)->
     User.asUser(2)
     Alert.addAlert('Logged in as ' + User.user().name + "!", "success")
 
+  $scope.alertToAdd = {
+    msg:null
+    type:'success'
+  }
+  $scope.postNewAlert = (alertToAdd) ->
+    if (Alert.addAlert(alertToAdd.msg, alertToAdd.type))
+     alertToAdd.msg=null

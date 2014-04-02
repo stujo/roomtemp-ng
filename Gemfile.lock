@@ -31,6 +31,8 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     builder (3.1.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -178,6 +180,7 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   better_errors
+  bootstrap-sass (~> 3.1)
   coffee-rails (~> 4.0.0)
   guard-bundler
   guard-livereload

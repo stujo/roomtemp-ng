@@ -1,10 +1,11 @@
 div ng-controller="HomeCtrl"
-  h1.ng-cloak
+  h1.ng-cloak.page-header
     |{{title}}
   ul
     li ng-repeat="option in options"
       =link_to '{{option.label}}', '{{option.href}}'
 
-  button ng-click="asBob()" Bob
-  button ng-click="asMary()" Mary
-  button ng-click="asUnknown()" Unknown
+  .btn-group
+    button.btn.btn-default ng-click="asBob()" Bob
+    button.btn.btn-default ng-click="asMary()" Mary
+    button.btn.btn-default ng-click="asUnknown()" Unknown

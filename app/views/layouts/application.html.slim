@@ -21,42 +21,52 @@ html ng-app="RoomTemp" ng-controller="LayoutCtrl" lang="en"
       .navbar.navbar-default role="navigation"
         .container-fluid
           .navbar-header 
-            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse" 
+            button.navbar-toggle [
+                type="button"
+                data-toggle="collapse"
+                data-target=".navbar-collapse"
+                ng-init="navCollapsed = true"
+                ng-click="navCollapsed = !navCollapsed"
+              ]
               span.sr-only Toggle navigation 
               span.icon-bar
               span.icon-bar 
               span.icon-bar 
             a.navbar-brand href="#" RoomTemp
-          .navbar-collapse.collapse 
+          .navbar-collapse.collapse ng-class="!navCollapsed && 'in'"
             ul.nav.navbar-nav 
-              li.active
-                a href="/" Home
+              /li.active
+              /  a href="/" Home
               li.roomtemp_if_logged_in
                 a href="/logout" Logout
               li.roomtemp_if_logged_out
                 a href="/login" Login
-              li.dropdown
-                /a.dropdown-toggle href="#" data-toggle="dropdown"
-                /  |Dropdown
-                /  b.caret
-                /ul class="dropdown-menu"
-                /  li
-                /    a href="#" Action
-                /  li
-                /    a href="#" Another action
-                /  li
-                /    a href="#" Something else here
-                /  li.divider
-                /  li.dropdown-header Nav header
-                /  li
-                /    a href="#" Separated link
-                /  li
-                /    a href="#" One more separated link
-            ul.nav.navbar-nav.navbar-right
-              li.roomtemp_if_logged_in
-                a href="/logout" Logout
               li.roomtemp_if_logged_out
-                a href="/login" Login
+                a href="/register" Register
+              /li.dropdown
+              /  a.dropdown-toggle href="#" data-toggle="dropdown"
+              /    |Dropdown
+              /    b.caret
+              /  ul class="dropdown-menu"
+              /    li
+              /      a href="#" Action
+              /    li
+              /      a href="#" Another action
+              /    li
+              /      a href="#" Something else here
+              /    li.divider
+              /    li.dropdown-header Nav header
+              /    li
+              /      a href="#" Separated link
+              /    li
+              /      a href="#" One more separated link
+            /ul.nav.navbar-nav.navbar-right
+            /  li.roomtemp_if_logged_in
+            /    a href="/logout" Logout
+            /  li.roomtemp_if_logged_out
+            /    a href="/login" Login
+            /  li.roomtemp_if_logged_out
+            /    a href="/register" Register
 
       H1
         |{{ Page.title() }}

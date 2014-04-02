@@ -1,10 +1,16 @@
 doctype html
-html ng-app="RoomTemp"
+html ng-app="RoomTemp" ng-controller="LayoutCtrl"
   head
-    title RoomTemp {{"(with angular)"}}
+    title RoomTemp {{ Page.title() }}
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
 
     = csrf_meta_tags
   body
+    .header
+      ul
+        li ng-show="User.loggedIn()" =link_to 'Log Out', '/logout'
+        li ng-hide="User.loggedIn()" =link_to 'Log In', '/login'
+    H1
+      |{{ Page.title() }}
     = yield

@@ -4,3 +4,7 @@ div ng-controller="HomeCtrl"
   ul
     li ng-repeat="option in options"
       =link_to '{{option.label}}', '{{option.href}}'
+
+  button ng-click="asBob()" Bob
+  button ng-click="asMary()" Mary
+  button ng-click="asUnknown()" Unknown
